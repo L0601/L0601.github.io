@@ -5,18 +5,15 @@
   
   <title>c++错题笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序1234567891011121314151617#include&amp;lt;iostream&amp;gt;using namespace std;class base1&amp;#123;    private: int a,b;    public:    base1 ( int i ) : b(i+1),a(b)&amp;#123;&amp;#12">
-<meta name="keywords" content="c++">
+  <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c++错题笔记">
 <meta property="og:url" content="http://yoursite.com/2018/06/02/cpp_error/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序1234567891011121314151617#include&amp;lt;iostream&amp;gt;using namespace std;class base1&amp;#123;    private: int a,b;    public:    base1 ( int i ) : b(i+1),a(b)&amp;#123;&amp;#12">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-02T16:00:26.452Z">
+<meta property="og:updated_time" content="2018-06-02T16:11:17.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c++错题笔记">
-<meta name="twitter:description" content="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序1234567891011121314151617#include&amp;lt;iostream&amp;gt;using namespace std;class base1&amp;#123;    private: int a,b;    public:    base1 ( int i ) : b(i+1),a(b)&amp;#123;&amp;#12">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -87,13 +84,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="1-c-成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序"><a href="#1-c-成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序" class="headerlink" title="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序"></a>1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class base1&#123;</span><br><span class="line">    private: int a,b;</span><br><span class="line">    public:</span><br><span class="line">    base1 ( int i ) : b(i+1),a(b)&#123;&#125;</span><br><span class="line">    base1():b(0),a(b)&#123;&#125;</span><br><span class="line">    int get_a()&#123;return a;&#125;</span><br><span class="line">    int get_b()&#123;return b;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    base1 obj1(11);</span><br><span class="line">    cout&lt;&lt;obj1.get_a()&lt;&lt;endl&lt;&lt;obj1.get_b()&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>　<br><a id="more"></a></p>
+<h6 id="1-c-成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序"><a href="#1-c-成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序" class="headerlink" title="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序"></a>1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序</h6><!-- more -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class base1&#123;</span><br><span class="line">    private: int a,b;</span><br><span class="line">    public:</span><br><span class="line">    base1 ( int i ) : b(i+1),a(b)&#123;&#125;</span><br><span class="line">    base1():b(0),a(b)&#123;&#125;</span><br><span class="line">    int get_a()&#123;return a;&#125;</span><br><span class="line">    int get_b()&#123;return b;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    base1 obj1(11);</span><br><span class="line">    cout&lt;&lt;obj1.get_a()&lt;&lt;endl&lt;&lt;obj1.get_b()&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出的结果应该是a为一个随机数，而b为12.按照a、b的顺序来初始化成员变量。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/02/cpp_error/" data-id="cjhxl4e070000m4v4q19oy3tp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/02/cpp_error/" data-id="cjhxlb3is00001kv49m5jm50x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
@@ -104,15 +103,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/02/re/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          正则表达式匹配整数、小数以及小数的科学表示法
-        
-      </div>
-    </a>
   
+    <a href="/2018/06/02/re/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">正则表达式匹配整数、小数以及小数的科学表示法</div>
+    </a>
   
 </nav>
 
@@ -162,11 +157,11 @@
       <ul>
         
           <li>
-            <a href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
+            <a href="/2018/06/02/cpp_error/">c++错题笔记</a>
           </li>
         
           <li>
-            <a href="/2018/06/02/cpp_error/">c++错题笔记</a>
+            <a href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
           </li>
         
       </ul>

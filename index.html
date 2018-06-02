@@ -62,51 +62,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/02/re/" class="article-date">
-  <time datetime="2018-06-02T15:28:06.000Z" itemprop="datePublished">2018-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何匹配整数，小数，以及小数的科学计数法"><a href="#如何匹配整数，小数，以及小数的科学计数法" class="headerlink" title="如何匹配整数，小数，以及小数的科学计数法"></a>如何匹配整数，小数，以及小数的科学计数法</h3><h6 id="1-匹配整数，只需要注意到整数不能以0打头就行。"><a href="#1-匹配整数，只需要注意到整数不能以0打头就行。" class="headerlink" title="1.匹配整数，只需要注意到整数不能以0打头就行。"></a>1.匹配整数，只需要注意到整数不能以0打头就行。</h6><p><code>[1-9][0-9]*</code></p>
-<h6 id="2-匹配普通的小数，也需要考虑小数是否以0打头。"><a href="#2-匹配普通的小数，也需要考虑小数是否以0打头。" class="headerlink" title="2. 匹配普通的小数，也需要考虑小数是否以0打头。"></a>2. 匹配普通的小数，也需要考虑小数是否以0打头。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+</code></p>
-<h6 id="3-匹配小数的科学计数法。"><a href="#3-匹配小数的科学计数法。" class="headerlink" title="3. 匹配小数的科学计数法。"></a>3. 匹配小数的科学计数法。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+e(\+|\-|)[1-9][0-9]*</code></p>
-<p>把2、3综合一下，就可以得到匹配小数的正则表达式</p>
-<p><code>([1-9][0-9]*|0)\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)</code></p>
-<h6 id="4-zuihou-综合一下，把整数的匹配也加进去"><a href="#4-zuihou-综合一下，把整数的匹配也加进去" class="headerlink" title="4. zuihou 综合一下，把整数的匹配也加进去"></a>4. zuihou 综合一下，把整数的匹配也加进去</h6><p>即小数部分如果是可选的话，那么就可以把整数也包括进去</p>
-<p><code>([1-9][0-9]*|0)(\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)|)</code><br><!-- ![alt ](match.png) --></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h6 id="a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp"><a href="#a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp" class="headerlink" title="a.正则表达式表示啥或者也没有时,把’空’放在最右边，即(exp|),而不是(|exp)."></a>a.正则表达式表示啥或者也没有时,把’空’放在最右边，即<strong>(exp|)</strong>,而不是(|exp).</h6><h6 id="b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。"><a href="#b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。" class="headerlink" title="b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。"></a>b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/02/re/" data-id="cjhxkjh1v00001cv40gl2t2z3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/re/">re</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-cpp_error" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/02/cpp_error/" class="article-date">
@@ -129,16 +84,62 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="1-c-成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序"><a href="#1-c-成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序" class="headerlink" title="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序"></a>1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class base1&#123;</span><br><span class="line">    private: int a,b;</span><br><span class="line">    public:</span><br><span class="line">    base1 ( int i ) : b(i+1),a(b)&#123;&#125;</span><br><span class="line">    base1():b(0),a(b)&#123;&#125;</span><br><span class="line">    int get_a()&#123;return a;&#125;</span><br><span class="line">    int get_b()&#123;return b;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    base1 obj1(11);</span><br><span class="line">    cout&lt;&lt;obj1.get_a()&lt;&lt;endl&lt;&lt;obj1.get_b()&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出的结果应该是a为一个随机数，而b为12.按照a、b的顺序来初始化成员变量。</p>
-
+        <p>　<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/02/cpp_error/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/02/cpp_error/" data-id="cjhxl4e070000m4v4q19oy3tp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/02/cpp_error/" data-id="cjhxlb3is00001kv49m5jm50x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/02/re/" class="article-date">
+  <time datetime="2018-06-02T15:28:06.000Z" itemprop="datePublished">2018-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  　<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/02/re/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/02/re/" data-id="cjhxlb3j400011kv4e6ibqsn1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/re/">re</a></li></ul>
 
     </footer>
   </div>
@@ -191,11 +192,11 @@
       <ul>
         
           <li>
-            <a href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
+            <a href="/2018/06/02/cpp_error/">c++错题笔记</a>
           </li>
         
           <li>
-            <a href="/2018/06/02/cpp_error/">c++错题笔记</a>
+            <a href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
           </li>
         
       </ul>
