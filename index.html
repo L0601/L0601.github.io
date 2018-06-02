@@ -62,39 +62,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/02/re/" class="article-date">
-  <time datetime="2018-06-02T15:44:56.373Z" itemprop="datePublished">2018-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="正则表达式的一些笔记"><a href="#正则表达式的一些笔记" class="headerlink" title="正则表达式的一些笔记"></a>正则表达式的一些笔记</h1><h3 id="如何匹配整数，小数，以及小数的科学计数法"><a href="#如何匹配整数，小数，以及小数的科学计数法" class="headerlink" title="如何匹配整数，小数，以及小数的科学计数法"></a>如何匹配整数，小数，以及小数的科学计数法</h3><h6 id="1-匹配整数，只需要注意到整数不能以0打头就行。"><a href="#1-匹配整数，只需要注意到整数不能以0打头就行。" class="headerlink" title="1.匹配整数，只需要注意到整数不能以0打头就行。"></a>1.匹配整数，只需要注意到整数不能以0打头就行。</h6><p><code>[1-9][0-9]*</code></p>
-<h6 id="2-匹配普通的小数，也需要考虑小数是否以0打头。"><a href="#2-匹配普通的小数，也需要考虑小数是否以0打头。" class="headerlink" title="2. 匹配普通的小数，也需要考虑小数是否以0打头。"></a>2. 匹配普通的小数，也需要考虑小数是否以0打头。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+</code></p>
-<h6 id="3-匹配小数的科学计数法。"><a href="#3-匹配小数的科学计数法。" class="headerlink" title="3. 匹配小数的科学计数法。"></a>3. 匹配小数的科学计数法。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+e(\+|\-|)[1-9][0-9]*</code></p>
-<p>把2、3综合一下，就可以得到匹配小数的正则表达式</p>
-<p><code>([1-9][0-9]*|0)\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)</code></p>
-<h6 id="4-zuihou-综合一下，把整数的匹配也加进去"><a href="#4-zuihou-综合一下，把整数的匹配也加进去" class="headerlink" title="4. zuihou 综合一下，把整数的匹配也加进去"></a>4. zuihou 综合一下，把整数的匹配也加进去</h6><p>即小数部分如果是可选的话，那么就可以把整数也包括进去</p>
-<p><code>([1-9][0-9]*|0)(\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)|)</code><br><!-- ![alt ](match.png) --></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h6 id="a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp"><a href="#a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp" class="headerlink" title="a.正则表达式表示啥或者也没有时,把’空’放在最右边，即(exp|),而不是(|exp)."></a>a.正则表达式表示啥或者也没有时,把’空’放在最右边，即<strong>(exp|)</strong>,而不是(|exp).</h6><h6 id="b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。"><a href="#b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。" class="headerlink" title="b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。"></a>b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/02/re/" data-id="cjhxkjh1v00001cv40gl2t2z3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/02/first-blog/" class="article-date">
@@ -124,6 +91,51 @@
       <a data-url="http://yoursite.com/2018/06/02/first-blog/" data-id="cjhxjz2oz00008kv49a0q748n" class="article-share-link">Share</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/02/re/" class="article-date">
+  <time datetime="2018-06-02T15:28:06.000Z" itemprop="datePublished">2018-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/02/re/">正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则表达式的一些笔记"><a href="#正则表达式的一些笔记" class="headerlink" title="正则表达式的一些笔记"></a>正则表达式的一些笔记</h1><h3 id="如何匹配整数，小数，以及小数的科学计数法"><a href="#如何匹配整数，小数，以及小数的科学计数法" class="headerlink" title="如何匹配整数，小数，以及小数的科学计数法"></a>如何匹配整数，小数，以及小数的科学计数法</h3><h6 id="1-匹配整数，只需要注意到整数不能以0打头就行。"><a href="#1-匹配整数，只需要注意到整数不能以0打头就行。" class="headerlink" title="1.匹配整数，只需要注意到整数不能以0打头就行。"></a>1.匹配整数，只需要注意到整数不能以0打头就行。</h6><p><code>[1-9][0-9]*</code></p>
+<h6 id="2-匹配普通的小数，也需要考虑小数是否以0打头。"><a href="#2-匹配普通的小数，也需要考虑小数是否以0打头。" class="headerlink" title="2. 匹配普通的小数，也需要考虑小数是否以0打头。"></a>2. 匹配普通的小数，也需要考虑小数是否以0打头。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+</code></p>
+<h6 id="3-匹配小数的科学计数法。"><a href="#3-匹配小数的科学计数法。" class="headerlink" title="3. 匹配小数的科学计数法。"></a>3. 匹配小数的科学计数法。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+e(\+|\-|)[1-9][0-9]*</code></p>
+<p>把2、3综合一下，就可以得到匹配小数的正则表达式</p>
+<p><code>([1-9][0-9]*|0)\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)</code></p>
+<h6 id="4-zuihou-综合一下，把整数的匹配也加进去"><a href="#4-zuihou-综合一下，把整数的匹配也加进去" class="headerlink" title="4. zuihou 综合一下，把整数的匹配也加进去"></a>4. zuihou 综合一下，把整数的匹配也加进去</h6><p>即小数部分如果是可选的话，那么就可以把整数也包括进去</p>
+<p><code>([1-9][0-9]*|0)(\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)|)</code><br><!-- ![alt ](match.png) --></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h6 id="a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp"><a href="#a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp" class="headerlink" title="a.正则表达式表示啥或者也没有时,把’空’放在最右边，即(exp|),而不是(|exp)."></a>a.正则表达式表示啥或者也没有时,把’空’放在最右边，即<strong>(exp|)</strong>,而不是(|exp).</h6><h6 id="b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。"><a href="#b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。" class="headerlink" title="b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。"></a>b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/02/re/" data-id="cjhxkjh1v00001cv40gl2t2z3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/re，整数，小数匹配。/">re，整数，小数匹配。</a></li></ul>
+
     </footer>
   </div>
   
@@ -185,9 +197,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/re，整数，小数匹配。/">re，整数，小数匹配。</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/re，整数，小数匹配。/" style="font-size: 10px;">re，整数，小数匹配。</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -206,11 +232,11 @@
       <ul>
         
           <li>
-            <a href="/2018/06/02/re/">(no title)</a>
+            <a href="/2018/06/02/first-blog/">first_blog</a>
           </li>
         
           <li>
-            <a href="/2018/06/02/first-blog/">first_blog</a>
+            <a href="/2018/06/02/re/">正则表达式</a>
           </li>
         
           <li>
