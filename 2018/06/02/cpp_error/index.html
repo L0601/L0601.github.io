@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>c++错题笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序1234567891011121314151617#include&amp;lt;iostream&amp;gt;using namespace std;class base1&amp;#123;    private: int a,b;    public:    base1 ( int i ) : b(i+1),a(b)&amp;#123;&amp;#12">
+<meta name="keywords" content="c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++错题笔记">
+<meta property="og:url" content="http://yoursite.com/2018/06/02/cpp_error/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序1234567891011121314151617#include&amp;lt;iostream&amp;gt;using namespace std;class base1&amp;#123;    private: int a,b;    public:    base1 ( int i ) : b(i+1),a(b)&amp;#123;&amp;#12">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-02T16:00:26.452Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="c++错题笔记">
+<meta name="twitter:description" content="1.c++成员变量初始化的顺序是按照变量的声明顺序，而不是构造函数中变量的顺序1234567891011121314151617#include&amp;lt;iostream&amp;gt;using namespace std;class base1&amp;#123;    private: int a,b;    public:    base1 ( int i ) : b(i+1),a(b)&amp;#123;&amp;#12">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,54 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/02/re/" class="article-date">
-  <time datetime="2018-06-02T15:28:06.000Z" itemprop="datePublished">2018-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/02/re/">正则表达式匹配整数、小数以及小数的科学表示法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="正则表达式的一些笔记"><a href="#正则表达式的一些笔记" class="headerlink" title="正则表达式的一些笔记"></a>正则表达式的一些笔记</h1><h3 id="如何匹配整数，小数，以及小数的科学计数法"><a href="#如何匹配整数，小数，以及小数的科学计数法" class="headerlink" title="如何匹配整数，小数，以及小数的科学计数法"></a>如何匹配整数，小数，以及小数的科学计数法</h3><h6 id="1-匹配整数，只需要注意到整数不能以0打头就行。"><a href="#1-匹配整数，只需要注意到整数不能以0打头就行。" class="headerlink" title="1.匹配整数，只需要注意到整数不能以0打头就行。"></a>1.匹配整数，只需要注意到整数不能以0打头就行。</h6><p><code>[1-9][0-9]*</code></p>
-<h6 id="2-匹配普通的小数，也需要考虑小数是否以0打头。"><a href="#2-匹配普通的小数，也需要考虑小数是否以0打头。" class="headerlink" title="2. 匹配普通的小数，也需要考虑小数是否以0打头。"></a>2. 匹配普通的小数，也需要考虑小数是否以0打头。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+</code></p>
-<h6 id="3-匹配小数的科学计数法。"><a href="#3-匹配小数的科学计数法。" class="headerlink" title="3. 匹配小数的科学计数法。"></a>3. 匹配小数的科学计数法。</h6><p><code>([1-9][0-9]*|0)\.[0-9]+e(\+|\-|)[1-9][0-9]*</code></p>
-<p>把2、3综合一下，就可以得到匹配小数的正则表达式</p>
-<p><code>([1-9][0-9]*|0)\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)</code></p>
-<h6 id="4-zuihou-综合一下，把整数的匹配也加进去"><a href="#4-zuihou-综合一下，把整数的匹配也加进去" class="headerlink" title="4. zuihou 综合一下，把整数的匹配也加进去"></a>4. zuihou 综合一下，把整数的匹配也加进去</h6><p>即小数部分如果是可选的话，那么就可以把整数也包括进去</p>
-<p><code>([1-9][0-9]*|0)(\.[0-9]+(e(\+|\-|)[1-9][0-9]*|)|)</code><br><!-- ![alt ](match.png) --></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h6 id="a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp"><a href="#a-正则表达式表示啥或者也没有时-把’空’放在最右边，即-exp-而不是-exp" class="headerlink" title="a.正则表达式表示啥或者也没有时,把’空’放在最右边，即(exp|),而不是(|exp)."></a>a.正则表达式表示啥或者也没有时,把’空’放在最右边，即<strong>(exp|)</strong>,而不是(|exp).</h6><h6 id="b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。"><a href="#b-一步步的分析表达式，最后看能不能把或者的部分用-表达出出来，即提取公共的部分。" class="headerlink" title="b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。"></a>b.一步步的分析表达式，最后看能不能把或者的部分用|表达出出来，即提取公共的部分。</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/02/re/" data-id="cjhxkjh1v00001cv40gl2t2z3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/re/">re</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cpp_error" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-cpp_error" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/02/cpp_error/" class="article-date">
   <time datetime="2018-06-02T15:28:06.000Z" itemprop="datePublished">2018-06-02</time>
@@ -120,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/02/cpp_error/">c++错题笔记</a>
+    <h1 class="article-title" itemprop="name">
+      c++错题笔记
     </h1>
   
 
@@ -143,10 +101,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/02/re/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          正则表达式匹配整数、小数以及小数的科学表示法
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 </section>
         
